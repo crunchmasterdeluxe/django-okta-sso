@@ -4,7 +4,7 @@ setup(
     name='django-okta-sso',
     version='0.1.0',    
     description='Okta SSO package for Django that still uses Django users, groups, and permissions',
-    url='https://github.com/shuds13/pyexample',
+    url='https://github.com/crunchmasterdeluxe/django-okta-sso',
     author='Andy Gannaway',
     author_email='iamandycmd@gmail.com',
     license='BSD 2-clause',
