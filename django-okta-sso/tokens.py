@@ -400,7 +400,7 @@ def validate_or_redirect(
             response.status_code = 401
             return response
         # Take us to the login so we can get some tokens.
-        return HttpResponseRedirect(reverse("okta_oauth2:login"))
+        return HttpResponseRedirect(reverse("django-okta-sso:login"))
     except InvalidToken:
-        return HttpResponseRedirect(reverse("okta_oauth2:login"))
+        return HttpResponseRedirect(reverse("django-okta-sso:login"))
     return None

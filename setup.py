@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='django-okta-sso',
-    version='0.1.0',    
+    version='0.1.2',    
     description='Okta SSO package for Django that still uses Django users, groups, and permissions',
     url='https://github.com/crunchmasterdeluxe/django-okta-sso',
     author='Andy Gannaway',

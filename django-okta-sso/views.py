@@ -27,7 +27,7 @@ def login(request):
         "scope": config.scopes,
         "issuer": config.issuer,
     }
-    response = render(request, "okta_oauth2/login.html", {"config": okta_config})
+    response = render(request, "django-okta-sso/login.html", {"config": okta_config})
 
     _delete_cookies(response)
 
@@ -48,7 +48,7 @@ def callback(request):
             messages.error(request, error_description)
         except MessageFailure:
             return HttpResponseServerError(error_description)
-        return HttpResponseRedirect(reverse("okta_oauth2:login"))
+        return HttpResponseRedirect(reverse("django-okta-sso:login"))
 
     code = request.GET["code"]
     state = request.GET["state"]
@@ -66,7 +66,7 @@ def callback(request):
     user = authenticate(request, auth_code=code, nonce=cookie_nonce)
 
     if user is None:
-        return redirect(reverse("okta_oauth2:login"))
+        return redirect(reverse("django-okta-sso:login"))
 
     auth_login(request, user)
 
@@ -80,7 +80,7 @@ def callback(request):
 
 def logout(request):
     auth_logout(request)
-    return HttpResponseRedirect(reverse("okta_oauth2:login"))
+    return HttpResponseRedirect(reverse("django-okta-sso:login"))
 
 
 def _delete_cookies(response):

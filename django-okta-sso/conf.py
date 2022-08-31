@@ -7,9 +7,9 @@ from django.urls import NoReverseMatch, reverse
 # We can't check for tokens on these URL's
 # because we won't have them.
 DEFAULT_PUBLIC_NAMED_URLS = (
-    "okta_oauth2:login",
-    "okta_oauth2:logout",
-    "okta_oauth2:callback",
+    "django-okta-sso:login",
+    "django-okta-sso:logout",
+    "django-okta-sso:callback",
 )
 
 
